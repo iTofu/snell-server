@@ -17,8 +17,13 @@ run() {
     echo "Generating new config..."
     mkdir /etc/snell/
     echo "[snell-server]" >> ${CONF}
-    echo "listen = 0.0.0.0:${PORT}" >> ${CONF}
+    if [ "${IPV6}" = "true" ]; then
+      echo "listen = ::0:${PORT}" >> ${CONF}
+    else
+      echo "listen = 0.0.0.0:${PORT}" >> ${CONF}
+    fi
     echo "psk = ${PSK}" >> ${CONF}
+    echo "ipv6 = ${IPV6}" >> ${CONF}
     # echo "obfs = ${OBFS}" >> ${CONF}
   fi
   ${BIN} -c ${CONF}

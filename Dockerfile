@@ -5,10 +5,11 @@ FROM primovist/alpine-glibc
 LABEL maintainer="Leo <leodaxia@gmail.com>" \
   org.label-schema.name="snell-server"
 
-ENV SNELL_VERSION 4.0.0
+ENV SNELL_VERSION 4.0.1
 ENV LANG=C.UTF-8
-ENV PORT=6161
+ENV PORT=13254
 ENV PSK=
+ENV IPV6=true
 # ENV OBFS=http
 
 ARG FILE_NAME=snell-server-v${SNELL_VERSION}-linux-amd64.zip
