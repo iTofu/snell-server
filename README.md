@@ -1,5 +1,11 @@
 <h1 align="center">snell-server</h1>
 
+### Deprecated
+
+- **Recommend**: [funnyzak/snell-server-docker](https://github.com/funnyzak/snell-server-docker)
+
+---
+
 ```bash
 docker run -d --env PORT=13254 --env PSK=PSK_KEYS -p 13254:13254 -p 13254:13254/udp --name snell-server --restart=always leodaxia/snell-server:latest
 ```
